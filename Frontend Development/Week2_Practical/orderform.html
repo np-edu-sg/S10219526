@@ -1,0 +1,173 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Pizza Order Form</title>
+    <link rel="stylesheet" href="./css/styles.css"/>
+</head>
+<body>
+<form>
+    <h1>Pizza Order Form</h1>
+
+    <label for="pizza-type">
+        Pizza Type:
+    </label>
+    <select id="pizza-type">
+        <option selected disabled>Please select...</option>
+        <option>
+            Aloha Chicken
+        </option>
+        <option>
+            Beef Pepperoni
+        </option>
+        <option>
+            Chicken Delight
+        </option>
+        <option>
+            Deluxe Cheese
+        </option>
+    </select>
+
+    <label for="pizza-quantity">
+        Quantity:
+    </label>
+    <input id="pizza-quantity" type="number" min="1" max="4" value="1"/>
+
+    <br/>
+    <br/>
+
+    <fieldset>
+        <legend>Size:</legend>
+        <input id="pizza-size-small" type="radio" name="size"/>
+        <label for="pizza-size-small">
+            Small
+        </label>
+        <input id="pizza-size-medium" type="radio" name="size"/>
+        <label for="pizza-size-medium">
+            Medium
+        </label>
+        <input id="pizza-size-large" type="radio" name="size"/>
+        <label for="pizza-size-large">
+            Large
+        </label>
+    </fieldset>
+
+    <br/>
+
+    <fieldset>
+        <legend>Crust</legend>
+        <input id="pizza-crust-thin" type="radio" name="crusty"/>
+        <label for="pizza-crust-thin">
+            Thin
+        </label>
+        <input id="pizza-crust-thick" type="radio" name="crusty"/>
+        <label for="pizza-crust-thick">
+            Thick
+        </label>
+        <input id="pizza-size-deepdish" type="radio" name="crusty"/>
+        <label for="pizza-size-deepdish">
+            Deep Dish
+        </label>
+    </fieldset>
+
+    <br/>
+
+    <fieldset>
+        <legend>Toppings</legend>
+        <input id="pizza-toppings-mushrooms" type="checkbox"/>
+        <label for="pizza-toppings-mushrooms">
+            Mushrooms
+        </label>
+        <input id="pizza-toppings-sausage" type="checkbox"/>
+        <label for="pizza-toppings-sausage">
+            Sausage
+        </label>
+        <input id="pizza-toppings-olives" type="checkbox"/>
+        <label for="pizza-toppings-olives">
+            Olives
+        </label>
+    </fieldset>
+
+    <br/>
+
+    <label for="pizza-addons">
+        Addons:
+    </label>
+    <select id="pizza-addons">
+        <option selected>Please select addons if required</option>
+        <option>
+            Side of Buffalo Wings
+        </option>
+        <option>
+            Garlic Bread
+        </option>
+    </select>
+
+    <br/>
+    <br/>
+
+    <fieldset>
+        <legend>Deliver to:</legend>
+
+        <label for="deliver-name">
+            Name:
+        </label>
+        <input id="deliver-name" type="text" required/>
+
+        <br/>
+        <br/>
+
+        <label for="deliver-address">
+            Address:
+        </label>
+        <textarea id="deliver-address" rows="2" cols="30" required></textarea>
+
+        <label for="deliver-postal">
+            Postal Code:
+        </label>
+        <input id="deliver-postal" type="number" min="1" max="999999" required/>
+
+        <br/>
+        <br/>
+
+        <label for="deliver-phone">
+            Phone #
+        </label>
+        <input id="deliver-phone" type="text" pattern="^[689]\d{7}" required/>
+
+        <br/>
+        <br/>
+
+        <label for="deliver-email">
+            Email
+        </label>
+        <input id="deliver-email" type="email" placeholder="Enter email addresses" required/>
+
+        <br/>
+        <br/>
+
+        <label for="deliver-date">
+            Date:
+        </label>
+        <input id="deliver-date" type="date" min="2019-10-29" max="2019-11-04" required/>
+
+        <label for="deliver-time">
+            Time:
+        </label>
+        <input
+                id="deliver-time"
+                type="time"
+                value="10:00"
+                step="15"
+                min="10:00"
+                max="22:00"
+                required
+        />
+    </fieldset>
+
+    <br/>
+
+    <button type="submit">Submit</button>
+    <button type="reset">Reset</button>
+</form>
+</body>
+</html>

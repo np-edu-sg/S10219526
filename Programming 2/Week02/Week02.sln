@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "S10219526_StudentApp", "S10219526_StudentApp\S10219526_StudentApp.csproj", "{40D84F20-0F0B-44B8-B461-CA063A1FA1A4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "S10219526_EmployeeApp", "S10219526_EmployeeApp\S10219526_EmployeeApp.csproj", "{A68A1B03-4B0A-4A58-9783-051DB8AECD50}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{40D84F20-0F0B-44B8-B461-CA063A1FA1A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40D84F20-0F0B-44B8-B461-CA063A1FA1A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40D84F20-0F0B-44B8-B461-CA063A1FA1A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40D84F20-0F0B-44B8-B461-CA063A1FA1A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A68A1B03-4B0A-4A58-9783-051DB8AECD50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A68A1B03-4B0A-4A58-9783-051DB8AECD50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A68A1B03-4B0A-4A58-9783-051DB8AECD50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A68A1B03-4B0A-4A58-9783-051DB8AECD50}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

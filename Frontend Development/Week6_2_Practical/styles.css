@@ -1,0 +1,17 @@
+﻿body {
+    font-family: Arial, sans-serif;
+}
+
+form {
+    padding: 10px;
+    border: 10px solid olive;
+}
+
+label {
+    display: inline-block;
+    width: 150px;
+}
+
+.blue {
+    color: blue;
+}

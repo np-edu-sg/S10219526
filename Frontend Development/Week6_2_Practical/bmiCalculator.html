@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Qin Guan">
+    <meta name="description" content="BMI Calculator">
+
+    <link rel="stylesheet" href="./styles.css">
+    <script src="./bmiScript.js"></script>
+
+    <title>BMI Calculator</title>
+</head>
+<body>
+<form>
+    <h1>BMI Calculator</h1>
+    <p>
+        <label for="w">Enter weight:</label>
+        <input id="w" type="number" value="50" onchange="calculateBMI()">
+    </p>
+    <p>
+        <label for="h">Enter height:</label>
+        <input id="h" type="number" value="1.7" onchange="calculateBMI()">
+    </p>
+    <p id="t" class="blue"></p>
+</form>
+</body>
+</html>

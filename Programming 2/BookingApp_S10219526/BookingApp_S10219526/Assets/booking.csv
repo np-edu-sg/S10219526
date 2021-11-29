@@ -1,0 +1,7 @@
+ID,Duration(min),Status,Membership
+1001,100,Completed,true
+1002,70,Completed,false
+1003,105,Completed,false
+1005,55,In progress,false
+1006,45,In progress,true
+1007,60,In progress,false

@@ -1,0 +1,23 @@
+22
+69C:\Users\qingu\Projects\NP\Frontend Development\Week2_Practical\.idea132797124616942055 1
+94C:\Users\qingu\Projects\NP\Frontend Development\Week2_Practical\dist\orderform.b0fbc39c.js.map132797129751595121 0
+67C:\Users\qingu\Projects\NP\Frontend Development\Week2_Practical\css132797129238742025 1
+68C:\Users\qingu\Projects\NP\Frontend Development\Week2_Practical\dist132797267534704630 1
+90C:\Users\qingu\Projects\NP\Frontend Development\Week2_Practical\dist\orderform.b0fbc39c.js132797129751565104 0
+124C:\Users\qingu\Projects\NP\Frontend Development\Week2_Practical\.idea\.idea.Week2_PracticaL\.idea\projectSettingsUpdater.xml132797124741369254 0
+78C:\Users\qingu\Projects\NP\Frontend Development\Week2_Practical\orderform.html132797267533894652 0
+83C:\Users\qingu\Projects\NP\Frontend Development\Week2_Practical\Week2_Practical.sln132797124616371199 0
+95C:\Users\qingu\Projects\NP\Frontend Development\Week2_Practical\dist\orderform.7afdcd3f.css.map132797130985493261 0
+91C:\Users\qingu\Projects\NP\Frontend Development\Week2_Practical\dist\orderform.7afdcd3f.css132797130985473262 0
+83C:\Users\qingu\Projects\NP\Frontend Development\Week2_Practical\dist\orderform.html132797267534694630 0
+78C:\Users\qingu\Projects\NP\Frontend Development\Week2_Practical\css\styles.css132797129238742025 0
+91C:\Users\qingu\Projects\NP\Frontend Development\Week2_Practical\.idea\.idea.Week2_PracticaL132797124626430112 1
+97C:\Users\qingu\Projects\NP\Frontend Development\Week2_Practical\.idea\.idea.Week2_PracticaL\.idea132797267534534629 1
+108C:\Users\qingu\Projects\NP\Frontend Development\Week2_Practical\.idea\.idea.Week2_PracticaL\.idea\.gitignore132797124754235553 0
+103C:\Users\qingu\Projects\NP\Frontend Development\Week2_Practical\.idea\.idea.Week2_PracticaL\.idea\.name132797127658575708 0
+109C:\Users\qingu\Projects\NP\Frontend Development\Week2_Practical\.idea\.idea.Week2_PracticaL\.idea\discord.xml132797127660014569 0
+111C:\Users\qingu\Projects\NP\Frontend Development\Week2_Practical\.idea\.idea.Week2_PracticaL\.idea\encodings.xml132797124626530095 0
+113C:\Users\qingu\Projects\NP\Frontend Development\Week2_Practical\.idea\.idea.Week2_PracticaL\.idea\indexLayout.xml132797124740873586 0
+111C:\Users\qingu\Projects\NP\Frontend Development\Week2_Practical\.idea\.idea.Week2_PracticaL\.idea\workspace.xml132797267534524631 0
+119C:\Users\qingu\Projects\NP\Frontend Development\Week2_Practical\.idea\.idea.Week2_PracticaL\.idea\jsLibraryMappings.xml132797124626510101 0
+106C:\Users\qingu\Projects\NP\Frontend Development\Week2_Practical\.idea\.idea.Week2_PracticaL\.idea\misc.xml132797124741219259 0

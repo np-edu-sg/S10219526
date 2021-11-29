@@ -1,0 +1,17 @@
+﻿body {
+    font-family: Arial, sans-serif;
+}
+
+form {
+    padding: 10px;
+    border: 10px solid olive;
+}
+
+.h {
+    background-color: yellow;
+}
+
+#t {
+    font-weight: 700;
+    padding: 10px;
+}
