@@ -5,7 +5,7 @@ namespace Assignment.Models
 {
     public class CabinService
     {
-        public Guid Id { get; set; }
+        public int Id { get; set; }
         public DateTime DateTime { get; set; }
         public DateTime ServeBy { get; set; }
         

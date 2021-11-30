@@ -22,5 +22,10 @@ namespace Assignment
         {
             optionsBuilder.UseSqlServer(@"Server=localhost; Database=Assignment; User Id=SA; Password=Password");
         }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Reservation>().HasMany(r => r.Tables).WithOne(t => t.Reservation).IsRequired(false);
+        }
     }
 }

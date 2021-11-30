@@ -5,7 +5,7 @@ namespace Assignment.Models
 {
     public class ActivitySlot
     {
-        public Guid Id { get; set; }
+        public int Id { get; set; }
         public DateTime DateTime { get; set; }
 
         public Activity Activity { get; set; }

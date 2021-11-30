@@ -5,7 +5,7 @@ namespace Assignment.Models
 {
     public class Dish
     {
-        public Guid Id { get; set; }
+        public int Id { get; set; }
         public string Description { get; set; }
         public bool IsVegan { get; set; }
         public bool IsHalal { get; set; }

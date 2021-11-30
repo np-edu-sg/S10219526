@@ -5,7 +5,7 @@ namespace Assignment.Models
 {
     public class Reservation
     {
-        public Guid Id { get; set; }
+        public int Id { get; set; }
         public DateTime Time { get; set; }
         
         public Passenger Passenger { get; set; }

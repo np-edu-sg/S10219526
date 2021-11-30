@@ -5,7 +5,7 @@ namespace Assignment.Models
 {
     public class ActivityBooking
     {
-        public Guid Id { get; set; }
+        public int Id { get; set; }
         public ActivitySlot ActivitySlot { get; set; }
     }
 }

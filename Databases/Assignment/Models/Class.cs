@@ -5,7 +5,7 @@ namespace Assignment.Models
 {
     public class Class
     {
-        public Guid Id { get; set; }
+        public int Id { get; set; }
         public string Venue { get; set; }
         public string Description { get; set; }
         public int IntervalSeconds { get; set; }
