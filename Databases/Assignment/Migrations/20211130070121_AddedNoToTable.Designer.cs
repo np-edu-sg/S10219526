@@ -4,6 +4,7 @@ using Assignment;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Assignment.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20211130070121_AddedNoToTable")]
+    partial class AddedNoToTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -34,8 +36,9 @@ namespace Assignment.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("DurationSeconds")
-                        .HasColumnType("int");
+                    b.Property<string>("Venue")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -75,10 +78,6 @@ namespace Assignment.Migrations
 
                     b.Property<DateTime>("DateTime")
                         .HasColumnType("datetime2");
-
-                    b.Property<string>("Venue")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ActivityId", "DateTime");
 
@@ -176,11 +175,11 @@ namespace Assignment.Migrations
 
             modelBuilder.Entity("Assignment.Models.Dish", b =>
                 {
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<int>("DiningLocationId")
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("Allergens")
                         .HasColumnType("nvarchar(max)");
@@ -188,8 +187,8 @@ namespace Assignment.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("IsAlcoholic")
-                        .HasColumnType("bit");
+                    b.Property<int>("DiningLocationId")
+                        .HasColumnType("int");
 
                     b.Property<bool>("IsHalal")
                         .HasColumnType("bit");
@@ -197,7 +196,11 @@ namespace Assignment.Migrations
                     b.Property<bool>("IsVegan")
                         .HasColumnType("bit");
 
-                    b.HasKey("Name", "DiningLocationId");
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
 
                     b.HasIndex("DiningLocationId");
 
@@ -215,12 +218,8 @@ namespace Assignment.Migrations
                     b.Property<int>("CabinServiceId")
                         .HasColumnType("int");
 
-                    b.Property<int>("DishDiningLocationId")
+                    b.Property<int>("DishId")
                         .HasColumnType("int");
-
-                    b.Property<string>("DishName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
 
                     b.Property<int>("Status")
                         .HasColumnType("int");
@@ -229,7 +228,7 @@ namespace Assignment.Migrations
 
                     b.HasIndex("CabinServiceId");
 
-                    b.HasIndex("DishName", "DishDiningLocationId");
+                    b.HasIndex("DishId");
 
                     b.ToTable("DishOrders");
                 });
@@ -241,18 +240,6 @@ namespace Assignment.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<int>("CabinNo")
-                        .HasColumnType("int");
-
-                    b.Property<string>("ContactNo")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("DateOfBirth")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -267,13 +254,10 @@ namespace Assignment.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int>("DiningLocationId")
-                        .HasColumnType("int");
-
                     b.Property<int>("PassengerId")
                         .HasColumnType("int");
 
-                    b.Property<int>("TableNo")
+                    b.Property<int>("TableId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("Time")
@@ -283,7 +267,7 @@ namespace Assignment.Migrations
 
                     b.HasIndex("PassengerId");
 
-                    b.HasIndex("TableNo", "DiningLocationId")
+                    b.HasIndex("TableId")
                         .IsUnique();
 
                     b.ToTable("Reservations");
@@ -291,13 +275,19 @@ namespace Assignment.Migrations
 
             modelBuilder.Entity("Assignment.Models.Table", b =>
                 {
-                    b.Property<int>("No")
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<int>("DiningLocationId")
                         .HasColumnType("int");
 
-                    b.HasKey("No", "DiningLocationId");
+                    b.Property<int>("No")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
 
                     b.HasIndex("DiningLocationId");
 
@@ -370,7 +360,7 @@ namespace Assignment.Migrations
 
                     b.HasOne("Assignment.Models.Dish", "Dish")
                         .WithMany("DishOrders")
-                        .HasForeignKey("DishName", "DishDiningLocationId")
+                        .HasForeignKey("DishId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -389,7 +379,7 @@ namespace Assignment.Migrations
 
                     b.HasOne("Assignment.Models.Table", "Table")
                         .WithOne("Reservation")
-                        .HasForeignKey("Assignment.Models.Reservation", "TableNo", "DiningLocationId")
+                        .HasForeignKey("Assignment.Models.Reservation", "TableId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

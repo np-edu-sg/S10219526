@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Assignment.Models
 {
@@ -8,8 +9,11 @@ namespace Assignment.Models
     {
         public int Id { get; set; }
         [Required] public DateTime Time { get; set; }
-        
+
         [Required] public Passenger Passenger { get; set; }
-        [Required] public List<Table> Tables { get; set; }
+        
+        [Required] public Table Table { get; set; }
+        [Required] public int TableNo { get; set; }
+        [Required] public int DiningLocationId { get; set; }
     }
 }

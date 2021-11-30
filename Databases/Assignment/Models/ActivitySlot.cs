@@ -6,9 +6,10 @@ namespace Assignment.Models
 {
     public class ActivitySlot
     {
-        public int Id { get; set; }
+        [Required] public string Venue { get; set; }
         [Required] public DateTime DateTime { get; set; }
 
+        [Required] public int ActivityId { get; set; }
         [Required] public Activity Activity { get; set; }
         public List<ActivityBooking> ActivityBookings { get; set; }
     }
