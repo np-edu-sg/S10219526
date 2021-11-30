@@ -25,7 +25,6 @@ namespace Assignment
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Reservation>().HasMany(r => r.Tables).WithOne(t => t.Reservation).IsRequired(false);
         }
     }
 }

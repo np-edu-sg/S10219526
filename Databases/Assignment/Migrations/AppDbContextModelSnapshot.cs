@@ -31,9 +31,11 @@ namespace Assignment.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("Description")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Venue")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -49,7 +51,7 @@ namespace Assignment.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int?>("ActivitySlotId")
+                    b.Property<int>("ActivitySlotId")
                         .HasColumnType("int");
 
                     b.Property<int?>("PassengerId")
@@ -72,7 +74,7 @@ namespace Assignment.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int?>("ActivityId")
+                    b.Property<int>("ActivityId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("DateTime")
@@ -118,7 +120,12 @@ namespace Assignment.Migrations
                     b.Property<int>("IntervalSeconds")
                         .HasColumnType("int");
 
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Venue")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -134,10 +141,10 @@ namespace Assignment.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int?>("ClassId")
+                    b.Property<int>("ClassId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("PassengerId")
+                    b.Property<int>("PassengerId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -160,6 +167,10 @@ namespace Assignment.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
 
                     b.ToTable("DiningLocations");
@@ -179,7 +190,7 @@ namespace Assignment.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("DiningLocationId")
+                    b.Property<int>("DiningLocationId")
                         .HasColumnType("int");
 
                     b.Property<bool>("IsHalal")
@@ -187,6 +198,10 @@ namespace Assignment.Migrations
 
                     b.Property<bool>("IsVegan")
                         .HasColumnType("bit");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -203,17 +218,17 @@ namespace Assignment.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int?>("CabinServiceId")
+                    b.Property<int>("CabinServiceId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("DateTime")
                         .HasColumnType("datetime2");
 
-                    b.Property<int?>("DishId")
+                    b.Property<int>("DishId")
                         .HasColumnType("int");
 
-                    b.Property<string>("Status")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -245,7 +260,7 @@ namespace Assignment.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int?>("PassengerId")
+                    b.Property<int>("PassengerId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("Time")
@@ -266,7 +281,7 @@ namespace Assignment.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int?>("DiningLocationId")
+                    b.Property<int>("DiningLocationId")
                         .HasColumnType("int");
 
                     b.Property<int?>("ReservationId")
@@ -285,7 +300,9 @@ namespace Assignment.Migrations
                 {
                     b.HasOne("Assignment.Models.ActivitySlot", "ActivitySlot")
                         .WithMany("ActivityBookings")
-                        .HasForeignKey("ActivitySlotId");
+                        .HasForeignKey("ActivitySlotId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("Assignment.Models.Passenger", null)
                         .WithMany("ActivityBookings")
@@ -298,7 +315,9 @@ namespace Assignment.Migrations
                 {
                     b.HasOne("Assignment.Models.Activity", "Activity")
                         .WithMany("ActivitySlots")
-                        .HasForeignKey("ActivityId");
+                        .HasForeignKey("ActivityId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Activity");
                 });
@@ -307,11 +326,15 @@ namespace Assignment.Migrations
                 {
                     b.HasOne("Assignment.Models.Class", "Class")
                         .WithMany("ClassBookings")
-                        .HasForeignKey("ClassId");
+                        .HasForeignKey("ClassId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("Assignment.Models.Passenger", "Passenger")
                         .WithMany("ClassBookings")
-                        .HasForeignKey("PassengerId");
+                        .HasForeignKey("PassengerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Class");
 
@@ -322,7 +345,9 @@ namespace Assignment.Migrations
                 {
                     b.HasOne("Assignment.Models.DiningLocation", "DiningLocation")
                         .WithMany("Dishes")
-                        .HasForeignKey("DiningLocationId");
+                        .HasForeignKey("DiningLocationId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("DiningLocation");
                 });
@@ -331,11 +356,15 @@ namespace Assignment.Migrations
                 {
                     b.HasOne("Assignment.Models.CabinService", "CabinService")
                         .WithMany("DishOrders")
-                        .HasForeignKey("CabinServiceId");
+                        .HasForeignKey("CabinServiceId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("Assignment.Models.Dish", "Dish")
                         .WithMany("DishOrders")
-                        .HasForeignKey("DishId");
+                        .HasForeignKey("DishId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("CabinService");
 
@@ -346,7 +375,9 @@ namespace Assignment.Migrations
                 {
                     b.HasOne("Assignment.Models.Passenger", "Passenger")
                         .WithMany("Reservations")
-                        .HasForeignKey("PassengerId");
+                        .HasForeignKey("PassengerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Passenger");
                 });
@@ -355,7 +386,9 @@ namespace Assignment.Migrations
                 {
                     b.HasOne("Assignment.Models.DiningLocation", "DiningLocation")
                         .WithMany("Tables")
-                        .HasForeignKey("DiningLocationId");
+                        .HasForeignKey("DiningLocationId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("Assignment.Models.Reservation", "Reservation")
                         .WithMany("Tables")
