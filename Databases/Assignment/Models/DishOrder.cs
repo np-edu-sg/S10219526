@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Assignment.Models
 {
@@ -10,6 +11,7 @@ namespace Assignment.Models
         Completed
     }
 
+    [Table("DishOrder")]
     public class DishOrder
     {
         public int Id { get; set; }

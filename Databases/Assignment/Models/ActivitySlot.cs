@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Assignment.Models
 {
+    [Table("ActivitySlot")]
     public class ActivitySlot
     {
         [Required] public string Venue { get; set; }

@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Assignment.Models
 {
+    [Table("Passenger")]
     public class Passenger
     {
         public int Id { get; set; }

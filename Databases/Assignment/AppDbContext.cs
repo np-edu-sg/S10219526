@@ -27,7 +27,7 @@ namespace Assignment
         {
             modelBuilder.Entity<Reservation>().HasOne(r => r.Table).WithOne(t => t.Reservation)
                 .HasForeignKey<Reservation>(r => new { r.TableNo, r.DiningLocationId });
-            
+
             modelBuilder.Entity<ActivitySlot>().HasKey(a => new { a.ActivityId, a.DateTime });
             modelBuilder.Entity<Table>().HasKey(t => new { t.No, t.DiningLocationId });
             modelBuilder.Entity<Dish>().HasKey(t => new { t.Name, t.DiningLocationId });
