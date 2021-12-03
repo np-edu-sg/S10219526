@@ -1,4 +1,6 @@
-﻿namespace S10219526_ShapeApp
+﻿using System;
+
+namespace S10219526_ShapeApp
 {
     public class Square : Shape
     {
