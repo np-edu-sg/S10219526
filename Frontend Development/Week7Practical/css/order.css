@@ -1,0 +1,18 @@
+form {
+    margin: 0 100px 30px;
+}
+
+#form-inner {
+    padding: 10px 15px;
+    margin-bottom: 30px;
+    border: #F9AB33 5px solid;
+}
+
+#form-inner > h3 {
+    text-align: center;
+    background-color: #F9AB33;
+}
+
+.red {
+    color: red;
+}

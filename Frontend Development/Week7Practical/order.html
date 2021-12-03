@@ -1,0 +1,122 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- To Do: Set Title -->
+    <title>Order</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- To Do: Bootstrap minified CSS, refer to week 4 if forgotten to add  -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <!-- To Do: jQuery library, refer to week 4 if forgotten to add  -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+
+    <!-- To Do: Bootstrap JavaScript, refer to week 4 if forgotten to add  -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- To Do: Site specific Cascading Stylesheet -->
+    <link rel="stylesheet" href="./css/order.css">
+    <script src="./js/order.js"></script>
+
+    <!-- To Do: Reference to the JavaScript library for including a HTML page, refer to week 5 if forgotten to add W3.IncludeHTML -->
+    <script src="https://www.w3schools.com/lib/w3.js"></script>
+</head>
+
+<body>
+<div class="container-fluid">
+    <!-- To Do: Include the header section -->
+
+    <!-- Bootstrap Grid 1st row - Header -->
+    <div class="row">
+        <!-- Bootstrap Grid column, full width -->
+        <div class="col-sm-12">
+            <!-- To Do: Include the header section -->
+            <div w3-include-html="header.html"></div>
+        </div>
+    </div>
+
+    <!-- Form Section -->
+    <div class="row">
+        <div class="col-12">
+            <form
+                    id="orderForm"
+                    onsubmit="showFinalMessage(); return false;"
+                    onreset="clearMessage()"
+            >
+
+                <!-- To Do: Code the form here -->
+
+                <div id="form-inner">
+                    <h3>
+                        Order form
+                    </h3>
+
+
+                    <label for="item">
+                        Item:
+                    </label>
+                    <select id="item" required onchange="showIntermediateMessage()">
+                        <option selected disabled value="">Select an item</option>
+                        <option value="blackBeanPurses">Black bean purses</option>
+                        <option value="southwesternNapoleons">Southwestern Napoleons</option>
+                        <option value="baguette">Baguette</option>
+                        <option value="bread">Bread</option>
+                        <option value="cheesecake">Cheesecake</option>
+                        <option value="scones">Scones</option>
+                    </select>
+
+                    <label for="quantity">Quantity:</label>
+                    <input type="number" id="quantity" value="1" min="1" max="5" required
+                           onchange="showIntermediateMessage()">
+
+                    <br/>
+
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" required>
+
+                    <br/>
+
+                    <label for="date">Collection Date:</label>
+                    <input type="date" id="date" onchange="showCollectionDate()" required>
+
+                    <br/>
+                    <br/>
+
+                    <span class="red" id="item-price"></span>
+
+                    <br/>
+
+                    <span class="red" id="collection-date"></span>
+                </div>
+
+                <input type="submit">
+                <input type="reset">
+
+                <br/>
+                <br/>
+
+                <h5 class="red" id="acknowledgement"></h5>
+            </form>
+        </div>
+    </div>
+
+
+    <!-- To Do: Include the footer section -->
+
+    <!-- Bootstrap Grid 3rd row - Footer -->
+    <div class="row">
+        <!-- Bootstrap Grid column, full width -->
+        <div class="col-sm-12">
+            <!-- To Do: Include the footer section -->
+            <div w3-include-html="footer.html"></div>
+        </div>
+    </div>
+
+</div> <!-- end #container div -->
+<script>
+    w3.includeHTML();
+</script>
+</body>
+</html>
