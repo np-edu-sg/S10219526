@@ -11,8 +11,9 @@ namespace Assignment.Models
         public int Id { get; set; }
         [Required] public string Venue { get; set; }
         [Required] public string Name { get; set; }
+        [Required] public int Capacity { get; set; }
         public string Description { get; set; }
-        [Required] public int IntervalMinutes { get; set; }
+        [Required] public int IntervalDays { get; set; }
 
         public List<ClassBooking> ClassBookings { get; set; }
     }

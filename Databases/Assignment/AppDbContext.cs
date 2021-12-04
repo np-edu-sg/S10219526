@@ -1,4 +1,5 @@
-﻿using Assignment.Models;
+﻿using System;
+using Assignment.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace Assignment
@@ -31,6 +32,8 @@ namespace Assignment
             modelBuilder.Entity<ActivitySlot>().HasKey(a => new { a.ActivityId, a.DateTime });
             modelBuilder.Entity<Table>().HasKey(t => new { t.No, t.DiningLocationId });
             modelBuilder.Entity<Dish>().HasKey(t => new { t.Name, t.DiningLocationId });
+            modelBuilder.Entity<DishOrder>().Property(d => d.Status).HasConversion(v => v.ToString(),
+                v => (DishOrderStatus)Enum.Parse(typeof(DishOrderStatus), v));
         }
     }
 }

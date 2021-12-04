@@ -10,7 +10,7 @@ namespace Assignment.Models
     public class Activity
     {
         public int Id { get; set; }
-        public int DurationSeconds { get; set; }
+        public int DurationMinutes { get; set; }
         [Required] public string Description { get; set; }
 
         public List<ActivitySlot> ActivitySlots { get; set; }
