@@ -19,5 +19,4 @@
 
         public abstract double FindPerimeter();
     }
-    
 }
