@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Qin Guan">
+    <meta name="description" content="Tour Booking Form">
+    <title>Tour Booking Form</title>
+
+    <script src="js/bookingScript.js" defer></script>
+
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div class="container">
+    <form id="form">
+        <h1>Sightseeing Activities in Singapore Booking Form</h1>
+        <fieldset>
+            <legend>Tour Detail</legend>
+
+            <label for="tour-name">Name of Tour:</label>
+            <select id="tour-name">
+                <option selected disabled>Please select the tour</option>
+                <option value="sentosa">Beautiful Sentosa Island Afternoon Tour</option>
+                <option value="halfDayTour">Half Day City Tour</option>
+                <option value="cruise">Singapore River Cruise</option>
+                <option value="christmasTour">Christmas Light-Up Tour</option>
+            </select>
+
+            <br/>
+            <br/>
+
+            <label for="date">Date:</label>
+            <input id="date" type="date" required>
+
+            <br/>
+            <br/>
+
+            <label for="adult">Adult:</label>
+            <input id="adult" type="number" value="1" min="1" max="5" required>
+
+            <label for="child">Child:</label>
+            <input id="child" type="number" value="0" min="0" max="5" required>
+        </fieldset>
+
+        <br/>
+
+        <fieldset>
+            <legend>Customer Detail</legend>
+
+            <label for="customer-name">Name:</label>
+            <input id="customer-name" type="text" placeholder="Enter your name" required>
+
+            <br/>
+            <br/>
+
+            <label for="email">Email:</label>
+            <input id="email" type="email" placeholder="Enter your email" required>
+        </fieldset>
+        
+        <br/>
+
+        <fieldset>
+            <legend>Booking Detail</legend>
+
+            <span id="detail">No tour selected</span>
+        </fieldset>
+
+        <br/>
+
+        <input type="submit">
+        <input type="reset">
+
+        <br/>
+        <br/>
+
+        <footer id="footer2">
+            Created by Qin Guan
+        </footer>
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,107 @@
+﻿body {
+    width: 80vw;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header, form > h1 {
+    text-align: center;
+    font-weight: bold;
+}
+
+div > h2, span, a {
+    font-weight: bold;
+}
+
+table {
+    border: black 3px solid;
+}
+
+th, td {
+    text-align: left;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+table tr:nth-child(1), tr:nth-last-child(1) {
+    background-color: azure;
+}
+
+img {
+    max-width: 100%;
+    padding-top: 20px;
+}
+
+cite {
+    font-size: 0.75rem;
+}
+
+caption {
+    font-size: 150%;
+}
+
+form {
+    width: 80%;
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: 10px solid deepskyblue;
+    margin: 0 auto;
+}
+
+form > i {
+}
+
+form > fieldset {
+    border-radius: 10px;
+}
+
+form > fieldset > legend {
+    font-weight: bold;
+}
+
+form > fieldset > label:not(label[for="adult"]):not(label[for="child"]) {
+    width: 100px;
+    display: inline-block;
+}
+
+#footer {
+    border-color: black;
+    border-width: 1px 0;
+    border-style: solid;
+    font-size: 75%;
+    font-style: italic;
+    background-color: highlight;
+    text-align: center;
+}
+
+#footer2 {
+    font-style: italic;
+    font-size: 75%;
+    color: deepskyblue;
+    text-align: right;
+}
+
+.flex {
+    display: flex;
+}
+
+.direction-column {
+    flex-direction: column;
+}
+
+.self-center {
+    align-self: center;
+}
+
+.w-150px {
+    width: 150px;
+}
+
+#tour-table {
+    margin-top: 20px;
+}
+
+#detail {
+    color: red;
+}
