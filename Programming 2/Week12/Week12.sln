@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "S10219526_BookApp", "S10219526_BookApp\S10219526_BookApp.csproj", "{2DDF0F6D-7403-40C0-942E-5DE739D4C06F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarParkAvailabilityApp", "CarParkAvailabilityApp\CarParkAvailabilityApp.csproj", "{0BBBEE3B-3E66-4157-BEBE-8A0046709D6B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2DDF0F6D-7403-40C0-942E-5DE739D4C06F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DDF0F6D-7403-40C0-942E-5DE739D4C06F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DDF0F6D-7403-40C0-942E-5DE739D4C06F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DDF0F6D-7403-40C0-942E-5DE739D4C06F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0BBBEE3B-3E66-4157-BEBE-8A0046709D6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BBBEE3B-3E66-4157-BEBE-8A0046709D6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BBBEE3B-3E66-4157-BEBE-8A0046709D6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BBBEE3B-3E66-4157-BEBE-8A0046709D6B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
