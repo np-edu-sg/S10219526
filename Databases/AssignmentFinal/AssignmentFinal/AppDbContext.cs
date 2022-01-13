@@ -77,10 +77,59 @@ public class AppDbContext : DbContext
         modelBuilder.Entity<EventSession>().HasKey(e => new { e.SessionNo, e.EventId });
         modelBuilder.Entity<Contain>().HasKey(c => new { c.DishId, c.IngredientId });
         modelBuilder.Entity<CategorisedIn>().HasKey(c => new { c.DishId, c.FoodCategoryId });
-        modelBuilder.Entity<Order>().HasKey(o => new { o.PassengerId, o.CsDishDishId, o.CsDishPrice, o.DateTime });
+        modelBuilder.Entity<Order>().HasKey(o => new { o.PassengerId, o.DateTime, o.DishId });
         modelBuilder.Entity<CsDish>().HasKey(p => new { p.DishId, p.Price });
-        modelBuilder.Entity<CsDish>().HasMany(c => c.Orders).WithOne(o => o.CsDish)
-            .HasForeignKey(o => new { o.CsDishDishId, o.CsDishPrice });
+
+        var bob = new Passenger
+        {
+            Id = 1,
+            Name = "Bob",
+            Email = "bob@gmail.com",
+            DOB = new DateOnly(2000, 01, 01),
+            Gender = 'M',
+        };
+
+        var chicken = new Ingredient
+        {
+            Id = 1,
+            Name = "Chicken",
+        };
+
+        var rice = new Ingredient
+        {
+            Id = 2,
+            Name = "Rice"
+        };
+
+        var chinese = new Cuisine
+        {
+            Id = 1,
+            CuisineName = "Chinese"
+        };
+
+        var halal = new FoodCategory
+        {
+            Id = 1,
+            Name = "Halal",
+            Description = "Halal food for Muslims"
+        };
+
+        modelBuilder.Entity<Passenger>().HasData(bob);
+        modelBuilder.Entity<Ingredient>().HasData(chicken, rice);
+        modelBuilder.Entity<Cuisine>().HasData(chinese);
+        modelBuilder.Entity<FoodCategory>().HasData(halal);
+
+        // chickenRice.Contains.Add(new Contain
+        // {
+        //     DishId = chickenRice.Id,
+        //     IngredientId = chicken.Id
+        // });
+        //
+        // chickenRice.Contains.Add(new Contain
+        // {
+        //     DishId = chickenRice.Id,
+        //     IngredientId = rice.Id
+        // });
 
         base.OnModelCreating(modelBuilder);
     }

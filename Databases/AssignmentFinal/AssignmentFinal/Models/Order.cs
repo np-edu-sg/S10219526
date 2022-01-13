@@ -12,7 +12,5 @@ public class Order
     public DateTime DelDateTime { get; set; }
 
     [Column("PgrID")] public int PassengerId { get; set; }
-    public CsDish CsDish { get; set; }
-    [Column("CsDishDishID")] public int CsDishDishId { get; set; }
-    public double CsDishPrice { get; set; }
+    [Column("DishID")] public int DishId { get; set; }
 }

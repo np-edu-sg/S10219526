@@ -39,12 +39,12 @@ class Line
 
     public double FindIntersectionX(Line two)
     {
-        return (B * two.C - two.B * C) / (A * two.B - two.A * B);
+        return (double) (B * two.C - two.B * C) / (A * two.B - two.A * B);
     }
 
     public double FindIntersectionY(Line two)
     {
-        return (C * two.A - two.C * A) / (A * two.B - two.A * B);
+        return (double) (C * two.A - two.C * A) / (A * two.B - two.A * B);
     }
 
     public override string ToString()

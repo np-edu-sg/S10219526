@@ -5,6 +5,6 @@ namespace AssignmentFinal.Models;
 
 public class PassengerContactNo
 {
-    [Column("PassengerID")] public int PassengerId { get; set; }
+    [Column("PgrID")] public int PassengerId { get; set; }
     public string ContactNo { get; set; }
 }

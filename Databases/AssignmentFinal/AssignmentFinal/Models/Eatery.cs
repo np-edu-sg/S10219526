@@ -14,4 +14,5 @@ public class Eatery
     [Column("EatyLoc")] public string Location { get; set; }
     
     public List<Reservation> Reservations { get; set; }
+    public List<Dish> Dishes { get; set; }
 }
