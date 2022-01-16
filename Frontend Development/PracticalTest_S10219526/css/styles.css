@@ -1,0 +1,75 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+table {
+    text-align: center;
+
+    border-spacing: 0;
+    border-collapse: collapse;
+    border: black 2px solid;
+}
+
+th {
+    background-color: lightgray;
+}
+
+table th, td {
+    padding: 4px;
+    border: 1px solid black;
+}
+
+table th:first-child {
+    border-right: 2px solid black;
+}
+
+/* 
+    Unclear from image if the bottom of the third row is thicker... uncomment if it is 
+*/
+
+/*table tr:nth-child(3) {*/
+/*    border-bottom: 2px solid black;*/
+/*}*/
+
+table > caption {
+    font-size: 200%;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    color: red;
+}
+
+form {
+    width: 500px;
+    margin: 0 50px;
+    padding: 20px;
+    border: black 2px solid;
+}
+
+form > h2 {
+    text-align: center;
+}
+
+form > label {
+    width: 150px;
+    display: inline-block;
+}
+
+.inline {
+    display: inline;
+}
+
+.rule {
+    width: 100%;
+    margin-bottom: 10px;
+    border-bottom: gray 1px solid;
+}
+
+#ict {
+    align-self: flex-start;
+}

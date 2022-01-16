@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Qin Guan">
+    <meta name="description" content="Open House 2022">
+
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/practiseTest.js" defer></script>
+
+    <title>Practical Test</title>
+</head>
+<body>
+
+<a id="ict" href="http://www.np.edu.sg/ict" target="_blank">
+    <img src="images/ICT.jpg" alt="ICT Logo" width="160" height="80"/>
+</a>
+
+<form id="form">
+    <h2>Open House Registration Form</h2>
+
+    <label for="course">Course Interested</label>
+    <select id="course">
+        <option>
+            CSF
+        </option>
+        <option>
+            FI
+        </option>
+        <option>
+            IMGD
+        </option>
+        <option>
+            IT
+        </option>
+    </select>
+
+    <br/>
+    <br/>
+
+    <label>Your Qualification</label>
+    <input id="qualification-ite" type="radio" name="qualification" required>
+    <label for="qualification-ite" class="inline">ITE</label>
+
+    <input id="qualification-o" type="radio" name="qualification" required>
+    <label for="qualification-o" class="inline">GCE 'O'</label>
+
+    <input id="qualification-a" type="radio" name="qualification" required>
+    <label for="qualification-a" class="inline">GCE 'A'</label>
+
+    <br/>
+    <br/>
+
+    <label for="name">Name</label>
+    <input id="name" type="text" placeholder="Enter your name" required>
+
+    <br/>
+    <br/>
+
+    <label for="email">Email address</label>
+    <input id="email" type="email" placeholder="Enter your email address" required>
+
+    <br/>
+    <br/>
+
+    <label>Activities Attending</label>
+    <input id="activity-1" type="checkbox" value="1" checked>
+    <label for="activity-1" class="inline">Day 1</label>
+
+    <input id="activity-2" type="checkbox" value="2">
+    <label for="activity-2" class="inline">Day 2</label>
+
+    <input id="activity-3" type="checkbox" value="3">
+    <label for="activity-3" class="inline">Day 3</label>
+
+    <br/>
+    <br/>
+
+    <label for="remarks">Remarks</label>
+    <textarea id="remarks" placeholder="Refreshment will be provided" rows="3" cols="30" required></textarea>
+
+    <br/>
+    <br/>
+
+    <input type="submit"/>
+    <input type="reset"/>
+    
+    <span id="m"></span>
+</form>
+
+<footer>
+    <i>
+        Done by Qin Guan
+    </i>
+</footer>
+
+<a href="OpenHouse2022.html" style="align-self: flex-start;">
+    <strong>
+        Return to Home Page
+    </strong>
+</a>
+
+</body>
+</html>
