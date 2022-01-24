@@ -1,10 +1,17 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace Q3
 {
     public static class Utilities
     {
+        public static List<T2> Select<T, T2>(this List<T> list, Func<T, T2> f)
+        {
+            var l = new List<T2>();
+            foreach (var item in list) l.Add(f(item));
+            return l;
+        }
+
         public static T SingleOrDefault<T>(this List<T> list, Func<T, bool> predicate)
         {
             var t = default(T);
