@@ -182,4 +182,6 @@ func main() {
 
 	waitEnter()
 	fmt.Printf("Bob decrypts data with shared secret:\nPlaintext: %s\n", pt)
+
+	waitEnter()
 }
