@@ -1,18 +1,18 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-
-namespace AssignmentFinal.Models;
+﻿namespace AssignmentFinal.Models;
 
 public class Booking
 {
-    [Column("BookingID")] public int Id { get; set; }
+    public int BookingId { get; set; }
     public int NoOfAdultTicket { get; set; }
     public int NoOfChildTicket { get; set; }
-    public Int32 AdultSalesPrice { get; set; }
-    public Int32 ChildSalesPrice { get; set; }
-    [Column("BookDateTime")] public DateTime DateTime { get; set; }
-    [Column("BookStatus")] public char Status { get; set; }
+    public double? AdultSalesPrice { get; set; }
+    public double? ChildSalesPrice { get; set; }
+    public DateTime BookDateTime { get; set; }
+    public string BookStatus { get; set; } = null!;
+    public int PgrId { get; set; }
+    public int EventSessionEventId { get; set; }
+    public int EventSessionSessionNo { get; set; }
 
-    [Column("PassengerID")] public int PassengerId { get; set; }
-    [Column("EventSessionEventID")] public int EventSessionEventId { get; set; }
-    [Column("EventSessionSessionNo")] public int EventSessionSessionNo { get; set; }
+    public virtual EventSession EventSession { get; set; } = null!;
+    public virtual Passenger Pgr { get; set; } = null!;
 }

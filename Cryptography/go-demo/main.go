@@ -151,10 +151,13 @@ func main() {
 	}
 
 	var input string
-	fmt.Print("Enter some data to encrypt: ")
-	_, err = fmt.Scanln(&input)
-	if err != nil {
-		panic(err)
+	for {
+		fmt.Print("Enter some data to encrypt: ")
+		_, err = fmt.Scanln(&input)
+		if err == nil {
+			break
+		}
+		fmt.Println("Invalid input")
 	}
 
 	paddedInput := padding.AddPadding([]byte(input))

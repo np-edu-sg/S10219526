@@ -1,20 +1,27 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace AssignmentFinal.Models;
 
 public class Event
 {
-    [Column("EventID")] public int EventId { get; set; }
-    [Column("EventName")] public string Name { get; set; }
-    [Column("EventDescr")] public string Description { get; set; }
-    [Column("EventLoc")] public string Location { get; set; }
-    [Column("EventCapacity")] public int Capacity { get; set; }
-    [Column("EventDuration")] public double Duration { get; set; }
+    public Event()
+    {
+        EventSessions = new HashSet<EventSession>();
+    }
+
+    public int EventId { get; set; }
+    public string EventName { get; set; } = null!;
+    public string EventDescr { get; set; } = null!;
+    public string EventLoc { get; set; } = null!;
+    public int EventCapacity { get; set; }
+    public double EventDuration { get; set; }
     public int MinAge { get; set; }
     public int MaxAge { get; set; }
-    public int AdultPrice { get; set; }
-    public int ChildPrice { get; set; }
+    public double? AdultPrice { get; set; }
+    public double? ChildPrice { get; set; }
+    public int Etid { get; set; }
 
-    [Column("EventTypeID")] public int EventTypeId { get; set; }
-    public List<EventSession> EventSessions { get; set; }
+    public virtual EventType Et { get; set; } = null!;
+    public virtual ICollection<EventSession> EventSessions { get; set; }
 }

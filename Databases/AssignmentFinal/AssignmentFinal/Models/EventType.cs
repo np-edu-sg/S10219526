@@ -1,11 +1,14 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-
-namespace AssignmentFinal.Models;
+﻿namespace AssignmentFinal.Models;
 
 public class EventType
 {
-    [Column("ETID")] public int Id { get; set; }
-    [Column("ETName")] public string Name { get; set; }
-    
-    public List<Event> Events { get; set; }
+    public EventType()
+    {
+        Events = new HashSet<Event>();
+    }
+
+    public int Etid { get; set; }
+    public string Etname { get; set; } = null!;
+
+    public virtual ICollection<Event> Events { get; set; }
 }

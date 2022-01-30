@@ -1,12 +1,14 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-
-namespace AssignmentFinal.Models;
+﻿namespace AssignmentFinal.Models;
 
 public class Cuisine
 {
-    [Column("CuisineID")] public int Id { get; set; }
-    public string CuisineName { get; set; }
+    public Cuisine()
+    {
+        Dishes = new HashSet<Dish>();
+    }
 
-    public List<Dish> Dishes { get; set; }
+    public int CuisineId { get; set; }
+    public string CuisineName { get; set; } = null!;
+
+    public virtual ICollection<Dish> Dishes { get; set; }
 }

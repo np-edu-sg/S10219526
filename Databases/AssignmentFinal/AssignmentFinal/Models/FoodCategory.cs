@@ -1,12 +1,15 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-
-namespace AssignmentFinal.Models;
+﻿namespace AssignmentFinal.Models;
 
 public class FoodCategory
 {
-    [Column("FcID")] public int Id { get; set; }
-    [Column("FcName")] public string Name { get; set; }
-    [Column("FcDescr")] public string Description { get; set; }
-    
-    public ICollection<CategorisedIn> CategorisedIn { get; set; }
+    public FoodCategory()
+    {
+        Dishes = new HashSet<Dish>();
+    }
+
+    public int FcId { get; set; }
+    public string FcName { get; set; } = null!;
+    public string FcDescr { get; set; } = null!;
+
+    public virtual ICollection<Dish> Dishes { get; set; }
 }

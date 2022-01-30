@@ -1,10 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-
-namespace AssignmentFinal.Models;
+﻿namespace AssignmentFinal.Models;
 
 public class PassengerContactNo
 {
-    [Column("PgrID")] public int PassengerId { get; set; }
-    public string ContactNo { get; set; }
+    public int PgrId { get; set; }
+    public string ContactNo { get; set; } = null!;
+
+    public virtual Passenger Pgr { get; set; } = null!;
 }

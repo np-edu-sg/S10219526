@@ -1,15 +1,15 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-
-namespace AssignmentFinal.Models;
+﻿namespace AssignmentFinal.Models;
 
 public class Reservation
 {
-    [Column("ReservID")] public int Id { get; set; }
-    [Column("ReservStatus")] public string Status { get; set; }
+    public int ReservId { get; set; }
+    public string ReservStatus { get; set; } = null!;
     public DateTime RequiredDateTime { get; set; }
     public DateTime ReservationDateTime { get; set; }
-    public Int16 NoOfPax { get; set; }
+    public short NoOfPax { get; set; }
+    public int EatyId { get; set; }
+    public int PgrId { get; set; }
 
-    [Column("EateryID")] public int EateryId { get; set; }
-    [Column("PassengerID")] public int PassengerId { get; set; }
+    public virtual Eatery Eaty { get; set; } = null!;
+    public virtual Passenger Pgr { get; set; } = null!;
 }
