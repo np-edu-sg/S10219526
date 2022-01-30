@@ -1,11 +1,14 @@
 package main
 
 import (
+	"bufio"
 	"crypto/cipher"
 	"crypto/rand"
 	"fmt"
 	"io"
 	"math/big"
+	"os"
+	"strings"
 	"time"
 
 	"golang.org/x/crypto/curve25519"
@@ -153,8 +156,10 @@ func main() {
 	var input string
 	for {
 		fmt.Print("Enter some data to encrypt: ")
-		_, err = fmt.Scanln(&input)
+		reader := bufio.NewReader(os.Stdin)
+		input, err = reader.ReadString('\n')
 		if err == nil {
+			input = strings.TrimSuffix(input, "\n")
 			break
 		}
 		fmt.Println("Invalid input")

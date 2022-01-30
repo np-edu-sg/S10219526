@@ -10,7 +10,7 @@ Common platform executables have been included:
 | macOS   | x64   | `main-darwin-amd64`      |
 | macos   | arm64 | `main-darwin-arm64`      |
 
-If your platform is not included above, you need to build the binary.
+If your platform is not included above, you need to build the executable yourself.
 
 Simply run the executable, and you will be presented with a terminal interface.
 

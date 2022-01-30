@@ -10,11 +10,10 @@ Cryptography Demo
         | macOS   | x64   | `main-darwin-amd64`      |
         | macos   | arm64 | `main-darwin-arm64`      |
 
+        If your platform is not included above, you need to build the executable yourself.
         Simply run the executable, and you will be presented with a terminal interface.
         Else you may also choose to run them from your preferred terminal application.
         NOTE: On macOS, you may have to open the executables from the terminal.
-
-        If your platform is not included above, you need to build the binary, follow steps below.
 
     2.  Build
 
