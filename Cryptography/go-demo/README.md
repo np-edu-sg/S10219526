@@ -12,6 +12,12 @@ Common platform executables have been included:
 
 If your platform is not included above, you need to build the binary.
 
+Simply run the executable, and you will be presented with a terminal interface.
+
+Else you may also choose to run them from your prefered terminal application.
+
+NOTE: On macOS, you may have to open the executables from the terminal.
+
 ### Build
 
 This is a typical Go program using Go modules with only 1 file - `main.go`

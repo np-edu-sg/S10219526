@@ -4,7 +4,6 @@ import (
 	"crypto/cipher"
 	"crypto/rand"
 	"fmt"
-	"github.com/cloudflare/redoctober/padding"
 	"io"
 	"math/big"
 	"time"
@@ -13,6 +12,7 @@ import (
 	"golang.org/x/crypto/twofish"
 
 	"github.com/binance-chain/tss-lib/crypto/paillier"
+	"github.com/cloudflare/redoctober/padding"
 )
 
 const (
