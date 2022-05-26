@@ -32,7 +32,7 @@ namespace RazorPagesMovie
             services.AddDbContext<RazorPagesMovieContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("RazorPagesMovieContext")));
 
-            services.AddIdentity<ApplicationUser, IdentityRole>()
+            services.AddIdentity<ApplicationUser, ApplicationRole>()
                 .AddDefaultUI()
                 .AddEntityFrameworkStores<RazorPagesMovieContext>()
                 .AddDefaultTokenProviders();

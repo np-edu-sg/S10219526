@@ -8,7 +8,7 @@ using RazorPagesMovie.Models;
 
 namespace RazorPagesMovie.Data
 {
-    public class RazorPagesMovieContext : IdentityDbContext<ApplicationUser>
+    public class RazorPagesMovieContext : IdentityDbContext<ApplicationUser, ApplicationRole, string>
     {
         public RazorPagesMovieContext (DbContextOptions<RazorPagesMovieContext> options)
             : base(options)
