@@ -4,6 +4,3 @@
 [submodule "Frontend Development/Assignment"]
 	path = Frontend Development/Assignment
 	url = git@gitlab.com:ngeeannpoly/fed/team2.git
-[submodule "Deep Learning/Datasets"]
-	path = Deep Learning/Datasets
-	url = git@gitlab.com:ngeeannpoly/ssd/datasets.git
