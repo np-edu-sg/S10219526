@@ -5,11 +5,13 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using RazorPagesMovie.Data;
+using RazorPagesMovie.Models;
 
 namespace RazorPagesMovie
 {
@@ -28,7 +30,38 @@ namespace RazorPagesMovie
             services.AddRazorPages();
 
             services.AddDbContext<RazorPagesMovieContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("RazorPagesMovieContext")));
+                options.UseSqlServer(Configuration.GetConnectionString("RazorPagesMovieContext")));
+
+            services.AddIdentity<ApplicationUser, IdentityRole>()
+                .AddDefaultUI()
+                .AddEntityFrameworkStores<RazorPagesMovieContext>()
+                .AddDefaultTokenProviders();
+
+            services.AddMvc()
+                .AddRazorPagesOptions(options =>
+                {
+                    // options.Conventions.AuthorizePage("/Movies/Create");
+                    // options.Conventions.AuthorizeAreaPage("Identity", "/Manage/Accounts");
+
+                    options.Conventions.AuthorizeFolder("/Movies");
+                });
+
+            services.Configure<IdentityOptions>(options =>
+            {
+                // Password settings
+                options.Password.RequireDigit = false;
+                options.Password.RequiredLength = 5;
+                options.Password.RequireNonAlphanumeric = false;
+                options.Password.RequireUppercase = false;
+                options.Password.RequireLowercase = false;
+                options.Password.RequiredUniqueChars = 1;
+                // Lockout settings
+                options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5);
+                options.Lockout.MaxFailedAccessAttempts = 1;
+                options.Lockout.AllowedForNewUsers = true;
+                // User settings
+                options.User.RequireUniqueEmail = true;
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -50,6 +83,7 @@ namespace RazorPagesMovie
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints => { endpoints.MapRazorPages(); });
