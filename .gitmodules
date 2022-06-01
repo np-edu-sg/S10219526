@@ -4,3 +4,6 @@
 [submodule "Frontend Development/Assignment"]
 	path = Frontend Development/Assignment
 	url = git@gitlab.com:ngeeannpoly/fed/team2.git
+[submodule "notes"]
+	path = notes
+	url = git@gitlab.com:ngeeannpoly/notes.git
