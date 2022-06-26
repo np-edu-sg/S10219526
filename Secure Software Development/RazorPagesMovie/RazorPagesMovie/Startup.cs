@@ -30,7 +30,7 @@ namespace RazorPagesMovie
             services.AddRazorPages();
 
             services.AddDbContext<RazorPagesMovieContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("RazorPagesMovieContext")));
+                options.UseSqlite(Configuration.GetConnectionString("RazorPagesMovieContext")));
 
             services.AddIdentity<ApplicationUser, ApplicationRole>()
                 .AddDefaultUI()
