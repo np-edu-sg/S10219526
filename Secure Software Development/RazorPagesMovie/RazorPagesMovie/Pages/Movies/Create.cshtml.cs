@@ -11,7 +11,7 @@ using RazorPagesMovie.Models;
 
 namespace RazorPagesMovie.Pages.Movies
 {
-    [Authorize(Roles = "Admin")]
+    // [Authorize(Roles = "Admin")]
     public class CreateModel : PageModel
     {
         private readonly RazorPagesMovie.Data.RazorPagesMovieContext _context;
@@ -26,8 +26,7 @@ namespace RazorPagesMovie.Pages.Movies
             return Page();
         }
 
-        [BindProperty]
-        public Movie Movie { get; set; }
+        [BindProperty] public Movie Movie { get; set; }
 
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://aka.ms/RazorPagesCRUD.
@@ -39,7 +38,22 @@ namespace RazorPagesMovie.Pages.Movies
             }
 
             _context.Movie.Add(Movie);
-            await _context.SaveChangesAsync();
+
+            //await _context.SaveChangesAsync();
+            // Once a record is added, create an audit record
+            if (await _context.SaveChangesAsync() > 0)
+            {
+                // Create an auditrecord object
+                var auditrecord = new AuditRecord();
+                auditrecord.AuditActionType = "Add Movie Record";
+                auditrecord.DateTimeStamp = DateTime.Now;
+                auditrecord.KeyMovieFieldID = Movie.ID;
+                // Get current logged-in user
+                var userID = User.Identity.Name.ToString();
+                auditrecord.Username = userID;
+                _context.AuditRecords.Add(auditrecord);
+                await _context.SaveChangesAsync();
+            }
 
             return RedirectToPage("./Index");
         }

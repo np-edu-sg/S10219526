@@ -6,6 +6,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <Folder Include="Pages\Audit" />
         <Folder Include="Pages\Movies" />
     </ItemGroup>
 
