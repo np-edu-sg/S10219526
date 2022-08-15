@@ -6,4 +6,4 @@
 	url = git@github.com:np-edu-sg/fed-team2.git
 [submodule "Secure Software Development/Assignment 1"]
 	path = Secure Software Development/Assignment 1
-	url = git@gitlab.com:ngeeannpoly/ssd/sussyland.git
+	url = git@github.com:np-edu-sg/ssd-monneh.git
