@@ -1,6 +1,6 @@
 [submodule "Programming 2/PRG2_T07_Team11"]
 	path = Programming 2/PRG2_T07_Team11
-	url = git@gitlab.com:ngeeannpoly/prg2/prg2_t07_team11.git
+	url = git@github.com:np-edu-sg/prg2-t07-team11.git
 [submodule "Frontend Development/Assignment"]
 	path = Frontend Development/Assignment
 	url = git@github.com:np-edu-sg/fed-team2.git
